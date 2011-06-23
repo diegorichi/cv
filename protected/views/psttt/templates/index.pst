@@ -1,0 +1,20 @@
+/*
+simplest example, hello world equivalent
+*/
+
+#name = $this->name
+title = $this->name
+
+#section > #title|deleteAllButFirst
+#section > #content|deleteAllButFirst
+
+#section |before = 
+<?php 
+   if ($this->sections) 
+    foreach($this->sections as $section ):?>
+    		#section #title  = $section[title]
+    		#section #content = $section[content]
+	
+#section |after = 
+	<?php endforeach;?>
+	

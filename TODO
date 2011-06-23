@@ -1,0 +1,41 @@
+1. en example1.php y index.pst
+  Revisar como hacer para cambiar el path a los css y js que tiene el html original
+  
+  por ejemplo
+  
+  <link type="text/css" href="print.css" rel="stylesheet" media="print">
+  
+  el atributo href, no tiene el path correcto en el documento destino.
+  
+  Hay que buscar la manera de que en compiled_templates el doc quede asi:
+  
+    <link type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/protected/views/psttt/html/default/print.css" rel="stylesheet" media="print">
+    
+  La cosa es que psttt me permite escribir href, pero no me deja tomar el valor que tiene. Quizas haya que agregarle una funcion o algo
+  
+  Otra alternativa es mover todos los "resources" a un directorio y manejarlos con un controller y un action (horrible)
+  
+  Otra alternativa es mover todos los "resources" a un directorio publico y el reemplazo anterior hacerlo:
+  
+    <link type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/public/templates/default/print.css" rel="stylesheet" media="print">
+  
+  NOTA: default es el nombre del template. Cuando cada usuario agregue un nuevo template, cambiara ese cacho.
+      
+  * esto ocurre con todas las referencias: <a href, <img src, <link href, <script src
+  
+  
+ 2. Cuando eso ande, comenzar con el resto: 
+    * Armar las clases de dominio.
+    * Armar el disenio de la bienvenida
+    * Armar las pantallas para la carga de datos
+      - secciones
+      - contenido de secciones
+      - datos basicos de persona
+      
+      Por ahora esto se hace sin clasificar nada, solo secciones y contenido. Luego vemos como seguimos.
+      
+ 	* Armar el registro de usuario casi automatico, con nada de datos. (email solo?) 
+ 	  y que luego los vaya llenando cuando tenga ganas. 
+ 
+ 
+ 
