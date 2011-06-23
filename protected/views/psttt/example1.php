@@ -43,9 +43,9 @@ foreach ($doc->getElementsByTagName('img') as $elem) {
 
 
 $html = $doc ->saveHTML();
-file_put_contents(PATH.'index2.html', $html);
+file_put_contents(PATH.'/html/index2.html', $html);
 
 $view->renderFile = '/default/index.html';
 
-$view->render('default/index.html','index2.html','index.pst');
+$view->render('default/index.html','/html/index2.html','index.pst');
 //$view->render('default/example1.html','example1.html','index.pst');
